@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppetchda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 23:52:59 by porrapat          #+#    #+#             */
-/*   Updated: 2021/10/20 23:53:55 by porrapat         ###   ########.fr       */
+/*   Created: 2021/10/23 23:40:54 by slertpim          #+#    #+#             */
+/*   Updated: 2021/10/24 12:09:03 by slertpim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
 
-void	ft_putchar(char c)
+#include<unistd.h>
+
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-char	*ft_strcpy(char *dest, char *src);
-
-int	main(void)
-{
-	char	*src;
-	char	dest[22];
-
-	src = "Hello World";
-	printf("base   : %s\n", src);
-	strcpy(dest, src);
-	printf("dest    : %s\n", dest);
-	ft_strcpy(dest, src);
-	printf("dest ft_cpy : %s\n", dest);
-	return (0);
+	i = 0;
+	while (i < n - 1 && scr[i])
+	{
+		dest[i] = scr[i];
+		i++;
+	}
+	return (dest);
 }
