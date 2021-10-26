@@ -1,0 +1,3 @@
+base   : Hello World
+dest    : Hello World
+dest ft_cpy : Hello World

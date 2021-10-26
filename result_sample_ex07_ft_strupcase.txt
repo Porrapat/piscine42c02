@@ -1,0 +1,2 @@
+should be normal    : heLl0
+should be upper case: HELL0

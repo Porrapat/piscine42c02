@@ -27,7 +27,7 @@ compile: norminette
 	-gcc ./ex09/ft_strcapitalize.c test_ex09_ft_strcapitalize.c -Wall -Werror -Wextra -o test_ex09_ft_strcapitalize
 	-gcc ./ex10/ft_strlcpy.c test_ex10_ft_strlcpy.c -Wall -Werror -Wextra -o test_ex10_ft_strlcpy
 	-gcc ./ex11/ft_putstr_non_printable.c test_ex11_ft_putstr_non_printable.c -Wall -Werror -Wextra -o test_ex11_ft_putstr_non_printable
-	-gcc ./ex12/ft_print_memory.c test_ex12_ft_print_memory.c -Wall -Werror -Wextra -o test_ex12_ft_print_memory
+	-gcc ./ex12/ft_print_memory.c test_ex12_ft_print_memory.c -o test_ex12_ft_print_memory -w
 
 build-sample: compile
 	-./test_ex00_ft_strcpy > result_sample_ex00_ft_strcpy.txt
