@@ -44,7 +44,7 @@ build-sample: compile
 	-./test_ex11_ft_putstr_non_printable > result_sample_ex11_ft_putstr_non_printable.txt
 	-./test_ex12_ft_print_memory > result_sample_ex12_ft_print_memory.txt
 
-run:
+run:	compile
 	-./test_ex00_ft_strcpy > result_current_ex00_ft_strcpy.txt
 	-./test_ex01_ft_strncpy > result_current_ex01_ft_strncpy.txt
 	-./test_ex02_ft_str_is_alpha > result_current_ex02_ft_str_is_alpha.txt
@@ -74,7 +74,7 @@ test:	all
 	-diff result_current_ex09_ft_strcapitalize.txt result_sample_ex09_ft_strcapitalize.txt
 	-diff result_current_ex10_ft_strlcpy.txt result_sample_ex10_ft_strlcpy.txt
 	-diff result_current_ex11_ft_putstr_non_printable.txt result_sample_ex11_ft_putstr_non_printable.txt
-	-diff result_current_ex12_ft_print_memory.txt result_sample_ex12_ft_print_memory.txt
+# -diff result_current_ex12_ft_print_memory.txt result_sample_ex12_ft_print_memory.txt
 
 clean:
 	-rm -rf */*.out
