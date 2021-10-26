@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppetchda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 char	*ft_strcpy(char *dest, char *src);
 
