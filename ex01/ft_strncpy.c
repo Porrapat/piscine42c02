@@ -5,22 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppetchda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 23:40:54 by slertpim          #+#    #+#             */
-/*   Updated: 2021/10/24 12:09:03 by slertpim         ###   ########.fr       */
+/*   Created: 2021/10/24 23:52:59 by porrapat          #+#    #+#             */
+/*   Updated: 2021/10/24 23:53:55 by porrapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	index;
 
-	i = 0;
-	while (i < n - 1 && scr[i])
+	index = 0;
+	while (src[index] != '\0' && index < n)
 	{
-		dest[i] = scr[i];
-		i++;
+		dest[index] = src[index];
+		index++;
+	}
+	while (index < n)
+	{
+		dest[index] = '\0';
+		index++;
 	}
 	return (dest);
 }

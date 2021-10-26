@@ -10,3 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
+
+int main()
+{
+    /* Create an example variable capable of holding 50 characters */
+    char example[50];
+
+    /* Copy 16 characters into the example variable
+     from the string "TechOnTheNet.com knows strncpy" */
+    ft_strncpy (example, "TechOnTheNet.com knows ft_strncpy!", 16);
+
+    /* Add the required NULL to terminate the copied string */
+    /* strncpy does not do this for you! */
+    example[16] = '\0';
+
+    /* Display the contents of the example variable to the screen */
+    printf("%s\n", example);
+
+    return 0;
+}

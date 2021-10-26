@@ -5,32 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ppetchda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 00:06:15 by slertpim          #+#    #+#             */
-/*   Updated: 2021/10/24 12:09:52 by slertpim         ###   ########.fr       */
+/*   Created: 2021/10/24 23:52:59 by porrapat          #+#    #+#             */
+/*   Updated: 2021/10/24 23:53:55 by porrapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-
 int	ft_str_is_alpha(char *str)
 {
-	int	i;
+	int	is_alpha;
+	int	index;
 
-	i = 0;
-	while (str[i])
+	is_alpha = 1;
+	index = 0;
+	while (str[index] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'B')
-		{
-			i++;
-		}
-		else if (str[i] >= 'a' && str[i] <= 'b')
-		{
-			i++;
-		}
-		else
+		if (str[index] < 'A' || str[index] > 'z'
+			|| (str[index] > 'Z' && str[index] < 'a'))
 		{
 			return (0);
 		}
+		else
+		{
+			index++;
+			continue ;
+		}
 	}
-	return (1);
+	return (is_alpha);
 }
