@@ -17,42 +17,18 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_ft(int *nbr)
-{
-	*nbr = 42;
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar('8');
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nb);
-	}
-	else
-	{
-		if (nb > 9)
-		{
-			ft_putnbr(nb / 10);
-		}
-		ft_putchar(48 + nb % 10);
-	}
-}
+char	*ft_strcpy(char *dest, char *src);
 
 int	main(void)
 {
-	int	number;
+	char	*src;
+	char	dest[22];
 
-	number = 24;
-	ft_putnbr(number);
-	ft_putchar('\n');
-	ft_ft(&number);
-	ft_putnbr(number);
-	ft_putchar('\n');
+	src = "Hello World";
+	printf("base   : %s\n", src);
+	strcpy(dest, src);
+	printf("dest    : %s\n", dest);
+	ft_strcpy(dest, src);
+	printf("dest ft_cpy : %s\n", dest);
 	return (0);
 }

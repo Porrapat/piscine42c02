@@ -54,6 +54,10 @@ run:
 	-./test_ex06_ft_str_is_printable > result_current_ex06_ft_str_is_printable.txt
 	-./test_ex07_ft_strupcase > result_current_ex07_ft_strupcase.txt
 	-./test_ex08_ft_strcapitalize > result_current_ex08_ft_strcapitalize.txt
+	-./test_ex09_ft_strlowcase > result_current_ex09_ft_strlowcase.txt
+	-./test_ex10_ft_strlcpy > result_current_ex10_ft_strlcpy.txt
+	-./test_ex11_ft_str_is_uppercase_non_printable > result_current_ex11_ft_str_is_uppercase_non_printable.txt
+	-./test_ex12_ft_print_memory > result_current_ex12_ft_print_memory.txt
 
 all:	norminette	compile run
 
@@ -67,6 +71,10 @@ test:	all
 	-diff result_current_ex06_ft_str_is_printable.txt result_sample_ex06_ft_str_is_printable.txt
 	-diff result_current_ex07_ft_strupcase.txt result_sample_ex07_ft_strupcase.txt
 	-diff result_current_ex08_ft_strcapitalize.txt result_sample_ex08_ft_strcapitalize.txt
+	-diff result_current_ex09_ft_strlowcase.txt result_sample_ex09_ft_strlowcase.txt
+	-diff result_current_ex10_ft_strlcpy.txt result_sample_ex10_ft_strlcpy.txt
+	-diff result_current_ex11_ft_str_is_uppercase_non_printable.txt result_sample_ex11_ft_str_is_uppercase_non_printable.txt
+	-diff result_current_ex12_ft_print_memory.txt result_sample_ex12_ft_print_memory.txt
 
 clean:
 	-rm -rf */*.out
@@ -80,6 +88,10 @@ clean:
 	-rm test_ex06_ft_str_is_printable
 	-rm test_ex07_ft_strupcase
 	-rm test_ex08_ft_strcapitalize
+	-rm test_ex09_ft_strlowcase
+	-rm test_ex10_ft_strlcpy
+	-rm test_ex11_ft_str_is_uppercase_non_printable
+	-rm test_ex12_ft_print_memory
 
 clean-sample:
 	-rm -rf result_sample_ex*.txt
