@@ -17,28 +17,38 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+void	ft_non_pritable_to_hexa(unsigned char c)
+{
+	char	*hexa;
+
+	hexa = "0123456789abcdef";
+	if (c / 16 > 0)
+	{
+		ft_putchar(hexa[c / 16]);
+		ft_putchar(hexa[c % 16]);
+	}
+	else
+	{
+		ft_putchar('0');
+		ft_putchar(hexa[c]);
+	}
+}
+
 void	ft_putstr_non_printable(char *str)
 {
 	int	index;
-	int	non_printable;
-	int	mod;
 
 	index = 0;
 	while (str[index] != '\0')
 	{
 		if (str[index] >= ' ' && str[index] <= '~')
+		{
 			ft_putchar(str[index]);
+		}
 		else
 		{
-			non_printable = str[index];
-			mod = str[index] % 16;
-			write(1, "\\", 1);
-			ft_putchar(non_printable / 16 + '0');
-			if (mod > 9)
-				mod = mod - 10 + 'a';
-			else
-				mod = mod + '0';
-			ft_putchar(mod);
+			ft_putchar('\\');
+			ft_non_pritable_to_hexa(str[index]);
 		}
 		index++;
 	}
