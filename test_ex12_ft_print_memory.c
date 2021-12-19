@@ -14,8 +14,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-#define MAX_PAGE_SIZE 14
-
 void	*ft_print_memory(void *addr, unsigned int size);
 
 int		main(void)
