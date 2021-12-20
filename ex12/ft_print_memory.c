@@ -15,10 +15,10 @@
 
 #define MAX_PAGE_SIZE 15
 
-void	ft_buffer_number(unsigned long number, int radix, int buffer[], int index)
+void	ft_bf_num(unsigned long number, int radix, int buffer[], int index)
 {
 	if (number > (unsigned long)(radix - 1))
-		ft_buffer_number(number / radix, radix, buffer, index + 1);
+		ft_bf_num(number / radix, radix, buffer, index + 1);
 	buffer[index] = number % radix;
 }
 
@@ -30,7 +30,7 @@ void	ft_write_hex(unsigned long number, int radix, int char_count)
 	index = -1;
 	while (index++ < MAX_PAGE_SIZE)
 		buffer[index] = 0;
-	ft_buffer_number(number, radix, buffer, 0);
+	ft_bf_num(number, radix, buffer, 0);
 	index = -1;
 	while (index++ < char_count)
 	{
