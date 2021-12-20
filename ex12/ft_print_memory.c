@@ -15,14 +15,14 @@
 
 #define MAX_PAGE_SIZE 15
 
-void	ft_buffer_number(int number, int radix, int buffer[], int index)
+void	ft_buffer_number(unsigned long number, int radix, int buffer[], int index)
 {
-	if (number > radix - 1)
+	if (number > (unsigned long)(radix - 1))
 		ft_buffer_number(number / radix, radix, buffer, index + 1);
 	buffer[index] = number % radix;
 }
 
-void	ft_write_hex(unsigned int number, int radix, int char_count)
+void	ft_write_hex(unsigned long number, int radix, int char_count)
 {
 	int	buffer[MAX_PAGE_SIZE + 1];
 	int	index;
@@ -58,7 +58,7 @@ void	ft_print_memory_at(void *start_addr, unsigned int size, char *curr_addr)
 		if (start_addr + size <= (void *)(curr_addr + index - 1))
 			write(1, &"  ", 2);
 		else
-			ft_write_hex((unsigned char)*(curr_addr + index - 1), 16, 1);
+			ft_write_hex((unsigned char)(*(curr_addr + index - 1)), 16, 1);
 		if (index % 2 == 0)
 			write(1, &" ", 1);
 	}

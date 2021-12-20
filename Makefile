@@ -29,6 +29,10 @@ compile: norminette
 	-gcc ./ex11/ft_putstr_non_printable.c test_ex11_ft_putstr_non_printable.c -Wall -Werror -Wextra -o test_ex11_ft_putstr_non_printable
 	-gcc ./ex12/ft_print_memory.c test_ex12_ft_print_memory.c -Wall -Werror -Wextra -o test_ex12_ft_print_memory
 
+twelve:
+	-gcc ./ex12/ft_print_memory.c test_ex12_ft_print_memory.c -Wall -Werror -Wextra -o test_ex12_ft_print_memory
+	-./test_ex12_ft_print_memory
+
 build-sample: compile
 	-./test_ex00_ft_strcpy > result_sample_ex00_ft_strcpy.txt
 	-./test_ex01_ft_strncpy > result_sample_ex01_ft_strncpy.txt
@@ -100,3 +104,5 @@ clean-before-push-with-sample: clean
 	-git add .
 	-git commit -m "Build Sample Complete"
 	-git push origin master
+
+.PHONY: norminette compile build-sample  run all test clean clean-sample clean-before-push-with-sample twelve
