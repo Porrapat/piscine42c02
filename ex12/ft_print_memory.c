@@ -33,7 +33,9 @@ void	ft_write_hex(unsigned int number, int radix, int char_count)
 	ft_buffer_number(number, radix, buffer, 0);
 	index = -1;
 	while (index++ < char_count)
+	{
 		write(1, &"0123456789abcdefgh"[buffer[char_count - index]], 1);
+	}
 }
 
 void	ft_write_safe_char(char *c)
@@ -43,7 +45,6 @@ void	ft_write_safe_char(char *c)
 	else
 		write(1, &".", 1);
 }
-
 
 void	ft_print_memory_at(void *start_addr, unsigned int size, char *curr_addr)
 {
