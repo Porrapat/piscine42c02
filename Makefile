@@ -78,11 +78,14 @@ test:	all
 	-diff result_current_ex09_ft_strcapitalize.txt result_sample_ex09_ft_strcapitalize.txt
 	-diff result_current_ex10_ft_strlcpy.txt result_sample_ex10_ft_strlcpy.txt
 	-diff result_current_ex11_ft_putstr_non_printable.txt result_sample_ex11_ft_putstr_non_printable.txt
-# -diff result_current_ex12_ft_print_memory.txt result_sample_ex12_ft_print_memory.txt
+	-cat result_current_ex12_ft_print_memory.txt | cut -f2- -d ' ' | cat -et > result_current_ex12_temp.txt
+	-cat result_sample_ex12_ft_print_memory.txt | cut -f2- -d ' ' | cat -et > result_sample_ex12_temp.txt
+	-diff result_current_ex12_temp.txt result_sample_ex12_temp.txt
 
 clean:
 	-rm -rf */*.out
 	-rm -rf result_current_ex*.txt
+	-rm -rf result_sample_ex12_temp.txt
 	-rm test_ex00_ft_strcpy
 	-rm test_ex01_ft_strncpy
 	-rm test_ex02_ft_str_is_alpha
