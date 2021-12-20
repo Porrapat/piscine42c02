@@ -13,7 +13,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 
-#define MAX_PAGE_SIZE 14
+#define MAX_PAGE_SIZE 15
 
 void	ft_buffer_number(int number, int radix, int buffer[], int index)
 {
@@ -34,7 +34,7 @@ void	ft_write_hex(unsigned int number, int radix, int char_count)
 	index = -1;
 	while (index++ < char_count)
 	{
-		write(1, &"0123456789abcdefgh"[buffer[char_count - index]], 1);
+		write(1, &"0123456789abcdef"[buffer[char_count - index]], 1);
 	}
 }
 
