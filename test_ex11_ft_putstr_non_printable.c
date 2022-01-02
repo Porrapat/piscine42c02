@@ -17,8 +17,21 @@ void	ft_putstr_non_printable(char *str);
 
 int		main(void)
 {
-	char	*string;
+	char mystring[256];
+	ft_putstr_non_printable("Coucou\ntu vas bien ?");
+	printf("\n");
+	fflush(stdout);
+	ft_putstr_non_printable("\t\n\n\n");
+	printf("\n");
+	fflush(stdout);
 
-	string = "Coucou\ntu vas bien ?";
-	ft_putstr_non_printable(string);
+	int i = 0;
+	for(int c = 1; c < 256; c++)
+	{
+		mystring[i++] = c;
+	}
+	mystring[i] = '\0';
+	ft_putstr_non_printable(mystring);
+	printf("\n");
+	fflush(stdout);
 }
